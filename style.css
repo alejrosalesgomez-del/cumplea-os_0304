@@ -86,3 +86,26 @@ button:active {
   font-size: 20px;
   font-weight: bold;
 }
+
+/* decoraciones hello kitty */
+.decoracion {
+  position: fixed;
+  width: 90px;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* posiciones */
+.k1 { top: 5%; left: 3%; }
+.k2 { top: 20%; right: 5%; }
+.k3 { bottom: 10%; left: 6%; }
+.k4 { bottom: 25%; right: 4%; }
+
+/* en móvil muy pequeño */
+@media (max-width: 480px) {
+  .decoracion {
+    width: 70px;
+    opacity: 0.15;
+  }
+}
