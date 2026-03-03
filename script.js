@@ -3,7 +3,7 @@ function abrirCarta() {
   document.getElementById("carta").classList.remove("oculto");
 }
 
-// animación al hacer scroll
+// textos que aparecen al hacer scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -14,18 +14,21 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.3
 });
 
-// observar textos
 document.querySelectorAll(".texto-scroll").forEach(el => {
   observer.observe(el);
 });
 
-// detectar final de página
-window.addEventListener("scroll", () => {
-  const final = document.getElementById("final-amor");
-  const rect = final.getBoundingClientRect();
+// activar pantalla final
+let finalMostrado = false;
 
-  if (rect.top < window.innerHeight * 0.8) {
-    document.body.classList.add("oscuro");
-    final.classList.add("visible");
+window.addEventListener("scroll", () => {
+  if (finalMostrado) return;
+
+  const scrollBottom =
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+
+  if (scrollBottom) {
+    finalMostrado = true;
+    document.getElementById("final-amor").classList.add("visible");
   }
 });
