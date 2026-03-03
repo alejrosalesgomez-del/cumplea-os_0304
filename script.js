@@ -32,3 +32,22 @@ window.addEventListener("scroll", () => {
     document.getElementById("final-amor").classList.add("visible");
   }
 });
+// pantalla traviesa al volver arriba
+let traviesaMostrada = false;
+
+window.addEventListener("scroll", () => {
+  // detectar si volvió arriba después de ver el final
+  const estaArriba = window.scrollY < 40;
+  const finalVisible =
+    document.getElementById("final-amor")?.classList.contains("visible");
+
+  if (estaArriba && finalVisible && !traviesaMostrada) {
+    traviesaMostrada = true;
+
+    setTimeout(() => {
+      document
+        .getElementById("pantalla-traviesa")
+        .classList.add("visible");
+    }, 400);
+  }
+});
