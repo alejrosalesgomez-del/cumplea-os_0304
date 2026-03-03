@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #ffe4ec, #ffc0cb);
+  color: #7a1f3d;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* pantallas */
+.pantalla {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* oculto */
+.oculto {
+  display: none;
+}
+
+/* botón */
+button {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d88;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* carta */
+.carta-box {
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.firma {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* galería */
+.galeria-titulo {
+  margin-top: 40px;
+}
+
+.galeria {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* final */
+.final {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
