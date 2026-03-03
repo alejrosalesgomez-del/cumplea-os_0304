@@ -6,7 +6,12 @@
 }
 
 body {
-  background: linear-gradient(180deg, #ffe4ec, #ffc0cb);
+  background: linear-gradient(
+    180deg,
+    #fff0f6 0%,
+    #ffd6e7 40%,
+    #ffb6d9 100%
+  );
   color: #7a1f3d;
   text-align: center;
   overflow-x: hidden;
@@ -87,13 +92,47 @@ button:active {
   font-weight: bold;
 }
 
+
+
 /* decoraciones hello kitty */
 .decoracion {
   position: fixed;
   width: 90px;
-  opacity: 0.18;
+  opacity: 0.22;
   z-index: 0;
   pointer-events: none;
+  animation: flotar 6s ease-in-out infinite;
+}
+
+/* variaciones de movimiento */
+.lento { animation-duration: 8s; }
+.rapido { animation-duration: 4.5s; }
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+
+/* posiciones */
+.k1 { top: 4%; left: 3%; }
+.k2 { top: 18%; right: 4%; }
+.k3 { bottom: 12%; left: 5%; }
+.k4 { bottom: 28%; right: 3%; }
+.k5 { top: 45%; left: 2%; }
+.k6 { top: 65%; right: 6%; }
+.k7 { bottom: 45%; left: 8%; }
+.k8 { top: 8%; right: 25%; }
+
+/* animación flotante */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* móvil */
+@media (max-width: 480px) {
+  .decoracion {
+    width: 65px;
+    opacity: 0.18;
+  }
 }
 
 /* posiciones */
