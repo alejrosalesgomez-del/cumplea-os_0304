@@ -51,3 +51,12 @@ window.addEventListener("scroll", () => {
     }, 400);
   }
 });
+
+// esperar a que carguen las imágenes
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("oculto");
+  }, 500); // pequeño delay romántico 😌
+});

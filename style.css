@@ -308,3 +308,31 @@ body.oscuro {
 .link-travieso:active {
   transform: scale(0.95);
 }
+
+/* loader pantalla completa */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #fff0f6, #ffb6d9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.6s ease;
+}
+
+/* caja del loader */
+.loader-box {
+  background: rgba(255,255,255,0.7);
+  padding: 20px 28px;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #7a1f3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* cuando se oculta */
+.loader.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
