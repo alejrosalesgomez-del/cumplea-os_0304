@@ -21,17 +21,38 @@ document.querySelectorAll(".texto-scroll").forEach(el => {
 // activar pantalla final
 let finalMostrado = false;
 
-window.addEventListener("scroll", () => {
-  if (finalMostrado) return;
+//window.addEventListener("scroll", () => {
+//  if (finalMostrado) return;
 
-  const scrollBottom =
-    window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+//  const scrollBottom =
+//    window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
 
-  if (scrollBottom) {
-    finalMostrado = true;
-    document.getElementById("final-amor").classList.add("visible");
-  }
-});
+//  if (scrollBottom) {
+//    finalMostrado = true;
+//    document.getElementById("final-amor").classList.add("visible");
+//  }
+//});
+// activar final cuando la última foto esté visible
+const ultimaFoto = document.getElementById("ultima-foto");
+
+const finalTrigger = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !finalMostrado) {
+      finalMostrado = true;
+
+      setTimeout(() => {
+        document
+          .getElementById("final-amor")
+          ?.classList.add("visible");
+      }, 2200); // tiempo para que alcance a leer 😌
+    }
+  });
+}, { threshold: 0.6 });
+
+if (ultimaFoto) {
+  finalTrigger.observe(ultimaFoto);
+}
+
 // pantalla traviesa al volver arriba
 let traviesaMostrada = false;
 
