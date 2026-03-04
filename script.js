@@ -44,7 +44,7 @@ const finalTrigger = new IntersectionObserver((entries) => {
         document
           .getElementById("final-amor")
           ?.classList.add("visible");
-      }, 2200); // tiempo para que alcance a leer 😌
+      }, 3200); // tiempo para que alcance a leer 😌
     }
   });
 }, { threshold: 0.6 });
